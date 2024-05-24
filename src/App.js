@@ -1,6 +1,6 @@
 import './App.css';
 import Navbar from './Pages/Components/Nav';
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter, Navigate } from "react-router-dom";
 import Home from './Pages/Home';
 import Footer from './Pages/Components/Footer';
 
@@ -15,6 +15,10 @@ function App() {
           element: <Home/>,
         },
       ]
+    },
+    {
+      path: '*',
+      element: <Navigate replace to="/"/>
     }
   ])
 
